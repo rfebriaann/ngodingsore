@@ -1,0 +1,13 @@
+<svg width="610" height="668" viewBox="0 0 610 668" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definisi Mask -->
+  <defs>
+    <mask id="star-mask">
+      <!-- Warna putih (visible area) untuk bagian yang ingin tetap terlihat -->
+      <rect width="610" height="668" fill="white" />
+      <!-- Warna hitam (cut area) untuk pola bintang -->
+      <path d="M313.479 320.988V416.612L387.479 416.612L387.479 320.988L462.884 379.901L508.443 321.588L410.577 245.127L508.443 168.665L462.884 110.352L387.479 169.266L387.479 73.643L313.479 73.643L313.479 169.265L238.074 110.352L192.515 168.665L290.381 245.127L192.515 321.588L238.074 379.901L313.479 320.988Z" fill="black" />
+    </mask>
+  </defs>
+
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M610 667.788V238.978C594.021 159.389 516.485 0.209229 334.18 0.209229C151.875 0.209229 55.3493 181.2 29.8747 271.696L0 376.114H95.877V538.31H334.18V667.788H610Z" fill="black" mask="url(#star-mask)" />
+</svg>
