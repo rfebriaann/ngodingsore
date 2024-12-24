@@ -6,7 +6,18 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Headline() {
   const text = useRef(null);
   const bunga = useRef(null);
+  const run = useRef(null);
   useEffect(() => {
+    gsap.set(run.current, {xPercent: -120, yPercent: -50});
+
+    let xTo = gsap.quickTo(run.current, "x", {duration: 0.4, ease: "power1"}),
+        yTo = gsap.quickTo(run.current, "y", {duration: 0.6, ease: "power1"});
+
+    window.addEventListener("mousemove", e => {
+      xTo(e.clientX);
+      yTo(e.clientY);
+    });
+
     gsap.to(bunga.current, {
       transformOrigin: "center",
       rotation: "360",
@@ -24,6 +35,13 @@ export default function Headline() {
         layout="fill"
         objectFit="cover"
       />
+      <Image
+          ref={run}
+          className="absolute z-20 text-orange-500"
+          src="/logo/bintang.svg"
+          width={50}
+          height={50}
+        />
       <div className="absolute h-full w-full left-[300px] top-[100px]">
         <Image
           ref={bunga}
