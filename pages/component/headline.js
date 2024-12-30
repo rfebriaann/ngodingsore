@@ -8,12 +8,12 @@ export default function Headline() {
   const bunga = useRef(null);
   const run = useRef(null);
   useEffect(() => {
-    gsap.set(run.current, {xPercent: -120, yPercent: -50});
+    gsap.set(run.current, { xPercent: -120, yPercent: -50 });
 
-    let xTo = gsap.quickTo(run.current, "x", {duration: 0.4, ease: "power1"}),
-        yTo = gsap.quickTo(run.current, "y", {duration: 0.6, ease: "power1"});
+    let xTo = gsap.quickTo(run.current, "x", { duration: 0.4, ease: "power1" }),
+      yTo = gsap.quickTo(run.current, "y", { duration: 0.6, ease: "power1" });
 
-    window.addEventListener("mousemove", e => {
+    window.addEventListener("mousemove", (e) => {
       xTo(e.clientX);
       yTo(e.clientY);
     });
@@ -36,12 +36,12 @@ export default function Headline() {
         objectFit="cover"
       />
       <Image
-          ref={run}
-          className="absolute z-20 text-orange-500"
-          src="/logo/bintang.svg"
-          width={50}
-          height={50}
-        />
+        ref={run}
+        className="absolute z-20 text-orange-500"
+        src="/logo/bintang.svg"
+        width={50}
+        height={50}
+      />
       <div className="absolute h-full w-full left-[300px] top-[100px]">
         <Image
           ref={bunga}
@@ -51,7 +51,7 @@ export default function Headline() {
           height={100}
         />
       </div>
-      <div className="absolute h-full w-full left-[260px] top-[340px]">
+      <div className="absolute h-full w-full left-[70px] top-[340px]">
         <Image
           className="text-orange-500"
           src="/logo/line3.svg"
@@ -60,16 +60,16 @@ export default function Headline() {
         />
       </div>
       <div className="relative flex z-10 w-full h-full justify-between items-center gap-20 text-white">
-        <div className="w-2/3">
+        <div className="sm:w-full md:w-2/3">
           <div className="z-20 px-20">
-            <h1 className="font-figtree text-[#F5EDD8] text-[55px] leading-none">
-              Jakarta & Bali based boutique creative studio who helps brands
-              stand out through stunning visual design and compelling
-              copywriting, leaving a lasting impression.
+            <h1 className="font-figtree sm:text-center md:text-left text-[#F5EDD8] sm:text-[40px] md:text-[55px] leading-none">
+              Based in Pekanbaru creative studio who helps brands stand out
+              through stunning visual design and compelling copywriting, leaving
+              a lasting impression.
             </h1>
           </div>
         </div>
-        <div className="relative h-full w-1/3">
+        <div className="relative h-full w-1/3 sm:hidden md:block">
           <Image
             className="z-10"
             src="/image/bg3.jpg"

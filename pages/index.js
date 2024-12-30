@@ -5,16 +5,19 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import Features from "./component/features";
+import Works from "./component/works";
+import Cta from "./component/cta";
 gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
   const jumbo = useRef(null);
-  useEffect(()=> {
+  useEffect(() => {
     ScrollTrigger.create({
       trigger: jumbo.current,
       start: "top top",
-      end: "+=690px",
+      end: "+=800vh",
       pinSpacing: false,
-      pin: true
+      pin: true,
     });
   });
   return (
@@ -24,6 +27,8 @@ export default function Home() {
       </div>
       <Headline />
       <Features />
+      <Works />
+      <Cta />
     </div>
   );
 }
